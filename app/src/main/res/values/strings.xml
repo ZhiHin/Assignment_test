@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Assignment_test</string>
+    <string name="appTitle">SmartFit</string>
+    <string name="loginTitle">LOGIN</string>
+    <string name="login_title2">HERE</string>
+    <string name="Username">"Username: "</string>
+    <string name="password">"Password: "</string>
+    <string name="usernameInput" />
+    <string name="passwordInput" />
+    <string name="login_button">LOGIN</string>
+</resources>
