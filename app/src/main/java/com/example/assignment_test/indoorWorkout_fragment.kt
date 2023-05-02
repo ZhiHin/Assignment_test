@@ -19,6 +19,7 @@ class indoorWorkout_fragment : Fragment(R.layout.fragment_indoor_workout_fragmen
 
         val indoorLvl1: ImageButton = view.findViewById(R.id.imageButton1)
         val indoorLvl2: ImageButton = view.findViewById(R.id.imageButton2)
+        val indoorLvl3: ImageButton = view.findViewById(R.id.imageButton3)
         // Set onClickListener for the button here
 
 
@@ -30,6 +31,11 @@ class indoorWorkout_fragment : Fragment(R.layout.fragment_indoor_workout_fragmen
 
         indoorLvl2.setOnClickListener{
             println("IMAGE TWO IS CLICKED")
+
+        }
+
+        indoorLvl3.setOnClickListener{
+            println("IMAGE THREE IS CLICKED")
 
         }
         return view
