@@ -7,14 +7,14 @@
 
     <TextView
         android:id="@+id/app_Title"
+        style="@style/title_style"
         android:text="@string/appTitle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.28"
+        app:layout_constraintHorizontal_bias="0.141"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.07999998"
-        style="@style/title_style" />
+        app:layout_constraintVertical_bias="0.076" />
 
     <TextView
         android:id="@+id/Login_Tiltle"
@@ -30,7 +30,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.19" />
+        app:layout_constraintVertical_bias="0.111" />
 
     <TextView
         android:id="@+id/login_title2"
@@ -61,7 +61,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Login_Tiltle"
-        app:layout_constraintVertical_bias="0.120000005" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/Password"
@@ -78,6 +78,23 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Username"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/RetypePassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/retypePassword"
+        android:textAppearance="@style/loginTextStyle"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Password"
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
@@ -107,6 +124,19 @@
         app:layout_constraintStart_toEndOf="@+id/Password"
         app:layout_constraintTop_toTopOf="@+id/Password" />
 
+    <EditText
+        android:id="@+id/retypePassword_Input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:hint="Retype Password"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="@+id/RetypePassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/RetypePassword"
+        app:layout_constraintTop_toTopOf="@+id/RetypePassword" />
+
     <Button
         android:id="@+id/signUp_button"
         android:layout_width="wrap_content"
@@ -118,8 +148,9 @@
         android:text="@string/signup_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Password"
-        app:layout_constraintVertical_bias="0.23000002" />
+        app:layout_constraintVertical_bias="0.601" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
