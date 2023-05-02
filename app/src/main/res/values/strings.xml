@@ -100,6 +100,8 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="signUpTitle">SIGN UP</string>
-    <string name="signup_button">SIGN UP</string>
+    <string name="signup_button">START</string>
     <string name="retypePassword">Retype-Password:</string>
+    <string name="SignUpText">You already have an account?</string>
+    <string name="goLogin">LOGIN NOW!</string>
 </resources>
