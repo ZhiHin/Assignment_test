@@ -82,7 +82,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/username_input"
+        android:id="@+id/Signup_username_input"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -96,7 +96,7 @@
         app:layout_constraintTop_toTopOf="@+id/Username" />
 
     <EditText
-        android:id="@+id/password_Input"
+        android:id="@+id/SignUp_password_Input"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
