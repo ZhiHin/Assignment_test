@@ -33,6 +33,12 @@
         <activity
             android:name=".SignUpActivity"
             android:exported="true"/>
+        <activity
+            android:name=".SignUpSub1Activity"
+            android:exported="true"/>
+        <activity
+            android:name=".SplashScreenActivity"
+            android:exported="true"/>
     </application>
 
 </manifest>
