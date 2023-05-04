@@ -31,6 +31,8 @@ class HomePageActivity : AppCompatActivity() {
         init()
         setUpTransformer()
 
+        bottomNavigationView = findViewById(R.id.bottomNavigationView)
+        bottomNavigationView.selectedItemId = R.id.home
 
         setUpBottomNavigationView()
 
@@ -89,10 +91,8 @@ class HomePageActivity : AppCompatActivity() {
         viewPager2.clipChildren = false
         viewPager2.getChildAt(0).overScrollMode = RecyclerView.OVER_SCROLL_NEVER
 
-        bottomNavigationView = findViewById(R.id.bottomNavigationView)
-        bottomNavigationView.selectedItemId = R.id.home
     }
-    public fun setUpBottomNavigationView() {
+    private fun setUpBottomNavigationView() {
 
         bottomNavigationView.setOnNavigationItemSelectedListener { item: MenuItem ->
             when (item.itemId) {
