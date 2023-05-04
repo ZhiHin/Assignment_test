@@ -80,6 +80,8 @@ class HomePageActivity : AppCompatActivity() {
 
         imageList.add(R.drawable.slider1)
         imageList.add(R.drawable.slider2)
+        imageList.add(R.drawable.slider3)
+        imageList.add(R.drawable.slider4)
 
 
 
