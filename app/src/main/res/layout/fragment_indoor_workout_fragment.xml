@@ -81,7 +81,7 @@
             android:layout_height="63dp"
             app:layout_constraintBottom_toBottomOf="@+id/imageButton2"
             app:layout_constraintStart_toStartOf="@+id/imageButton2"
-            app:srcCompat="@drawable/fire" />
+            app:srcCompat="@drawable/fire_lit" />
 
         <ImageView
             android:id="@+id/imageView12"
@@ -89,7 +89,7 @@
             android:layout_height="63dp"
             app:layout_constraintBottom_toBottomOf="@+id/imageButton3"
             app:layout_constraintStart_toStartOf="@+id/imageButton3"
-            app:srcCompat="@drawable/fire" />
+            app:srcCompat="@drawable/fire_lit" />
 
         <ImageView
             android:id="@+id/imageView13"
@@ -97,7 +97,7 @@
             android:layout_height="63dp"
             app:layout_constraintBottom_toBottomOf="@+id/imageButton3"
             app:layout_constraintStart_toEndOf="@+id/imageView12"
-            app:srcCompat="@drawable/fire" />
+            app:srcCompat="@drawable/fire_lit" />
 
         <ImageView
             android:id="@+id/imageView14"
@@ -105,7 +105,7 @@
             android:layout_height="63dp"
             app:layout_constraintBottom_toBottomOf="@+id/imageButton3"
             app:layout_constraintStart_toEndOf="@+id/imageView13"
-            app:srcCompat="@drawable/fire" />
+            app:srcCompat="@drawable/fire_lit" />
 
         <ImageView
             android:id="@+id/imageView10"
@@ -113,7 +113,7 @@
             android:layout_height="63dp"
             app:layout_constraintBottom_toBottomOf="@+id/imageButton2"
             app:layout_constraintStart_toEndOf="@+id/imageView5"
-            app:srcCompat="@drawable/fire" />
+            app:srcCompat="@drawable/fire_lit" />
 
         <ImageView
             android:id="@+id/imageView2"
@@ -121,7 +121,7 @@
             android:layout_height="63dp"
             app:layout_constraintBottom_toBottomOf="@+id/imageButton1"
             app:layout_constraintStart_toStartOf="@+id/imageButton1"
-            app:srcCompat="@drawable/fire" />
+            app:srcCompat="@drawable/fire_lit" />
 
         <ImageView
             android:id="@+id/imageView3"
@@ -129,7 +129,7 @@
             android:layout_height="63dp"
             app:layout_constraintBottom_toBottomOf="@+id/imageButton1"
             app:layout_constraintStart_toEndOf="@+id/imageView2"
-            app:srcCompat="@drawable/unlit_fire" />
+            app:srcCompat="@drawable/fire_unlit" />
 
         <ImageView
             android:id="@+id/imageView6"
@@ -137,7 +137,7 @@
             android:layout_height="63dp"
             app:layout_constraintBottom_toBottomOf="@+id/imageButton2"
             app:layout_constraintStart_toEndOf="@+id/imageView10"
-            app:srcCompat="@drawable/unlit_fire" />
+            app:srcCompat="@drawable/fire_unlit" />
 
         <ImageView
             android:id="@+id/imageView4"
@@ -145,7 +145,7 @@
             android:layout_height="63dp"
             app:layout_constraintBottom_toBottomOf="@+id/imageButton1"
             app:layout_constraintStart_toEndOf="@+id/imageView3"
-            app:srcCompat="@drawable/unlit_fire" />
+            app:srcCompat="@drawable/fire_unlit" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
