@@ -102,6 +102,9 @@
     <string name="signUpTitle">SIGN UP</string>
     <string name="signup_button">START</string>
     <string name="retypePassword">Retype-Password:</string>
-    <string name="SignUpText">You already have an account?</string>
+    <string name="SignUpText">-------- You already have an account? --------</string>
     <string name="goLogin">LOGIN NOW!</string>
+    <string name="welcome">WELCOME !</string>
+    <string name="sub1_longword">Hello!\nHere are some question to tailor a personalized plan for you.</string>
+    <string name="letsgo">Let\'s GO</string>
 </resources>
