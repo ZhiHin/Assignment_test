@@ -1,6 +1,5 @@
 package com.example.assignment_test
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
@@ -32,12 +31,23 @@ class SignUpSub1Activity : AppCompatActivity(){
         val goButton : Button = findViewById(R.id.ready_button)
         goButton.startAnimation(createSlideInAnimationBottom())
 
+
         //set button onClickListener
         goButton.setOnClickListener {
-            val intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent)
+           /* val signUpSub1Fragment = SignUpSub1_fragment()
+            supportFragmentManager.beginTransaction().apply {
+                replace(R.id.signUpSub1_Frame, signUpSub1Fragment)
+                commit()
+            }*/
+            val fragmentManager = supportFragmentManager
+            val fragmentTransaction = fragmentManager.beginTransaction()
+            fragmentTransaction.replace(R.id.signUpSub1_Frame, SignUpSub1_fragment())
+            fragmentTransaction.commit()
+           // val intent = Intent(this, SignUpSub1_fragment::class.java)
+           // startActivity(intent)
             Log.i("ButtonClick", "Button is successful clicked")
         }
+
     }
 
     private fun createSlideInAnimationLeft(): TranslateAnimation {
