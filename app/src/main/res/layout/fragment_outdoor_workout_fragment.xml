@@ -50,7 +50,7 @@
             android:layout_height="63dp"
             app:layout_constraintBottom_toBottomOf="@+id/outdoor_lvl2"
             app:layout_constraintStart_toStartOf="@+id/outdoor_lvl2"
-            app:srcCompat="@drawable/fire" />
+            app:srcCompat="@drawable/fire_lit" />
 
         <ImageView
             android:id="@+id/imageView"
@@ -58,7 +58,7 @@
             android:layout_height="63dp"
             app:layout_constraintBottom_toBottomOf="@+id/outdoor_lvl2"
             app:layout_constraintStart_toEndOf="@+id/imageView12"
-            app:srcCompat="@drawable/fire" />
+            app:srcCompat="@drawable/fire_lit" />
 
         <ImageView
             android:id="@+id/imageView6"
@@ -66,7 +66,7 @@
             android:layout_height="63dp"
             app:layout_constraintBottom_toBottomOf="@+id/outdoor_lvl2"
             app:layout_constraintStart_toEndOf="@+id/imageView"
-            app:srcCompat="@drawable/unlit_fire" />
+            app:srcCompat="@drawable/fire_unlit" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
