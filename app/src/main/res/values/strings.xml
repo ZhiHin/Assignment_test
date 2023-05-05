@@ -107,4 +107,5 @@
     <string name="welcome">WELCOME !</string>
     <string name="sub1_longword">Hello!\nHere are some question to tailor a personalized plan for you.</string>
     <string name="letsgo">Let\'s GO</string>
+    <string name="GoalsandFocus"><![CDATA[Goals & Focus]]></string>
 </resources>
