@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.MenuItem
+import android.widget.TextView
 import androidx.annotation.NonNull
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
@@ -30,6 +31,13 @@ class HomePageActivity : AppCompatActivity() {
         setContentView(R.layout.activity_home_page)
         init()
         setUpTransformer()
+
+        val usernameTextView = findViewById<TextView>(R.id.username)
+        val username = intent.getStringExtra("username")
+        System.out.println("this is my username")
+        System.out.println(username)
+        usernameTextView.text = username
+
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView)
         bottomNavigationView.selectedItemId = R.id.home

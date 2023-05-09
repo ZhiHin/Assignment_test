@@ -55,18 +55,21 @@ class WorkOutPageActivity : AppCompatActivity() {
                     // navigate to home activity
                     val intent = Intent(this, WorkOutPageActivity::class.java)
                     startActivity(intent)
+                    finish()
                     true
                 }
                 R.id.report -> {
                     // navigate to profile activity
                     val intent = Intent(this, WorkOutPageActivity::class.java)
                     startActivity(intent)
+                    finish()
                     true
                 }
                 R.id.home -> {
                     // navigate to settings activity
                     val intent = Intent(this, HomePageActivity::class.java)
                     startActivity(intent)
+                    finish()
                     true
 
 
