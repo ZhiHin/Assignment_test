@@ -1,0 +1,32 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory app:title="General">
+
+        <SwitchPreferenceCompat
+            app:key="theme"
+            app:title="DarkTheme" />
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="Notification">
+        <SwitchPreferenceCompat
+            app:key="notification"
+            app:title="Receive notification" />
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="More information">
+        <Preference
+            app:key="contactUs"
+            app:title="Contact Us"/>
+
+
+        <Preference
+            app:key="aboutUs"
+            app:title="about Us">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://www.youtube.com"/>
+        </Preference>
+    </PreferenceCategory>
+
+</PreferenceScreen>
