@@ -1,5 +1,6 @@
 package com.example.assignment_test
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -33,7 +34,7 @@ class HomePageActivity : AppCompatActivity() {
         setUpTransformer()
 
         val usernameTextView = findViewById<TextView>(R.id.username)
-        val username = intent.getStringExtra("username")
+        val username = getUsername()
         System.out.println("this is my username")
         System.out.println(username)
         usernameTextView.text = username
@@ -131,6 +132,12 @@ class HomePageActivity : AppCompatActivity() {
         }
 
 
+    }
+
+
+    private fun getUsername(): String? {
+        val sharedPref = getSharedPreferences("myPrefs", Context.MODE_PRIVATE)
+        return sharedPref.getString("username", null)
     }
 
 

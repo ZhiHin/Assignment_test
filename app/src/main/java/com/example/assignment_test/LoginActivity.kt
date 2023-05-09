@@ -1,5 +1,6 @@
 package com.example.assignment_test
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -30,11 +31,11 @@ class LoginActivity : AppCompatActivity() {
 
         val loginButton: Button =  findViewById(R.id.login_button)
         loginButton.setOnClickListener {
-//             login()
+             login()
 //login function require xamp & php files to work, only uncomment this if u hv the files
-            val intent = Intent(this@LoginActivity, HomePageActivity::class.java)
-            startActivity(intent)
-            finish()
+//            val intent = Intent(this@LoginActivity, HomePageActivity::class.java)
+//            startActivity(intent)
+//            finish()
         }
     }
 
@@ -56,6 +57,7 @@ class LoginActivity : AppCompatActivity() {
                     if (message == "login success") {
                         val intent = Intent(this@LoginActivity, HomePageActivity::class.java)
                         intent.putExtra("username", username)
+                        saveUsername(username)
                         startActivity(intent)
                         finish()
                     } else if (response == "failure") {
@@ -85,6 +87,14 @@ class LoginActivity : AppCompatActivity() {
             requestQueue.add(stringRequest)
         } else {
             Toast.makeText(this, "Fields can not be empty!", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun saveUsername(username: String) {
+        val sharedPref = getSharedPreferences("myPrefs", Context.MODE_PRIVATE) ?: return
+        with (sharedPref.edit()) {
+            putString("username", username)
+            apply()
         }
     }
 }
