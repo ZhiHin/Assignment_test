@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Assignment_test"
-        tools:targetApi="31" >
+        tools:targetApi="31"
+        android:windowSoftInputMode = "adjustPan">
         <activity
             android:name=".HomePageActivity"
             android:exported="true" />
@@ -42,6 +43,27 @@
             android:exported="true" />
         <activity
             android:name=".SplashScreenActivity"
+            android:exported="true" />
+        <activity
+            android:name=".GenderSelectionActivity"
+            android:exported="true" />
+        <activity
+            android:name=".InputNameActivity"
+            android:exported="true" />
+        <activity
+            android:name=".InputAgeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".HeightSelectionActivity"
+            android:exported="true" />
+        <activity
+            android:name=".WeightSelectionActivity"
+            android:exported="true" />
+        <activity
+            android:name=".InputEmail_PwdActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Done_signUp_Activity"
             android:exported="true" />
     </application>
 

@@ -107,5 +107,21 @@
     <string name="welcome">WELCOME !</string>
     <string name="sub1_longword">Hello!\nHere are some question to tailor a personalized plan for you.</string>
     <string name="letsgo">Let\'s GO</string>
-    <string name="GoalsandFocus"><![CDATA[Goals & Focus]]></string>
+    <string name="GoalsandFocus"><![CDATA[About You >>>]]></string>
+    <string name="whatIsYourGender">What\'s your gender ?</string>
+    <string name="genderDes">Knowing ypur gender can help us tailor the intensity for you based on different metobolic rate.</string>
+    <string name="whatyourname">What\'s your name?</string>
+    <string name="next">NEXT</string>
+    <string name="howoldareu">Hey yo, how old are you?</string>
+    <string name="whatyourheight">What\'s Your height?</string>
+    <string name="whatyouweight">What\'s your current weight?</string>
+    <string name="completelaststep">Complete the last step</string>
+    <string name="email">Email :</string>
+    <string name="pwd">Password :</string>
+    <string name="Retypepwd">Retype-Password :</string>
+    <string name="Congratulation">CONGRATULATIONS !</string>
+    <string name="doneDes">Sign-Up successful ! You now can enjoy all the features in this apps.</string>
+    <string name="havaaniceday">Have a nice day 😉</string>
+    <string name="male">Male</string>
+    <string name="Female">Female</string>
 </resources>
