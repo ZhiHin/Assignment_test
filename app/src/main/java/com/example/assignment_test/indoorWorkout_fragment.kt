@@ -1,5 +1,6 @@
 package com.example.assignment_test
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils.replace
 import androidx.fragment.app.Fragment
@@ -25,8 +26,8 @@ class indoorWorkout_fragment : Fragment(R.layout.fragment_indoor_workout_fragmen
 
 
         indoorLvl1.setOnClickListener{
-            println("IMAGE ONE IS CLICKED")
-
+            val intent = Intent(requireActivity(), indoorWorkOutLvl1::class.java)
+            startActivity(intent)
         }
 
         indoorLvl2.setOnClickListener{

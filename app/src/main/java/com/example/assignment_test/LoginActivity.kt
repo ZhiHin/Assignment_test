@@ -31,11 +31,11 @@ class LoginActivity : AppCompatActivity() {
 
         val loginButton: Button =  findViewById(R.id.login_button)
         loginButton.setOnClickListener {
-             login()
+//             login()
 //login function require xamp & php files to work, only uncomment this if u hv the files
-//            val intent = Intent(this@LoginActivity, HomePageActivity::class.java)
-//            startActivity(intent)
-//            finish()
+            val intent = Intent(this@LoginActivity, HomePageActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 
