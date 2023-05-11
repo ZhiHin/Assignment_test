@@ -1,79 +1,251 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MineFragment">
+    android:layout_height="match_parent">
 
-    <View
-        android:id="@+id/view"
+    <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
-        android:layout_height="158dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="-2dp"
-        android:background="#D1C7EC"
-        tools:ignore="VisualLintBounds" />
+        android:layout_height="0dp"
+        android:background="#EFEFEF"
+        android:contentDescription="nothing"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profile_image"
-        android:layout_width="64dp"
-        android:layout_height="55dp"
-        android:layout_alignBottom="@+id/view"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="67dp"
-        android:layout_marginBottom="34dp"
-        android:clickable="true"
-        android:contentDescription="@string/unmeaningful"
-        android:focusable="true"
-        android:src="@drawable/profilepicture"
-        app:civ_border_color="#FF000000"
-        app:civ_border_width="2dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/Profile"
-        android:layout_width="95dp"
-        android:layout_height="38dp"
-        android:layout_alignStart="@+id/profile_image"
-        android:layout_alignBottom="@+id/view"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="-1dp"
-        android:layout_marginTop="13dp"
-        android:layout_marginBottom="107dp"
-        android:text="@string/Profile"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        tools:ignore="TextSizeCheck" />
+            <RelativeLayout
+                android:id="@+id/relativeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="170dp">
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/profile_image"
-        android:layout_alignBottom="@+id/profile_image"
-        android:layout_marginStart="11dp"
-        android:layout_marginTop="3dp"
-        android:layout_marginBottom="26dp"
-        android:layout_toEndOf="@+id/profile_image"
-        android:text="@string/username_one23" />
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="-2dp"
+                    android:background="#D1C7EC"
+                    tools:ignore="VisualLintBounds" />
 
-    <ImageButton
-        android:id="@+id/button_settings"
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="245dp"
-        android:layout_marginTop="6dp"
-        android:layout_marginEnd="9dp"
-        android:layout_toEndOf="@+id/Profile"
-        android:background="#00FFFFFF"
-        android:contentDescription="@string/settings"
-        android:minWidth="50dp"
-        android:src="@drawable/baseline_settings_24" />
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profile_image"
+                    android:layout_width="64dp"
+                    android:layout_height="55dp"
+                    android:layout_alignBottom="@+id/view"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="67dp"
+                    android:layout_marginBottom="34dp"
+                    android:clickable="true"
+                    android:contentDescription="unmeaningful"
+                    android:focusable="true"
+                    android:src="@drawable/profilepicture"
+                    app:civ_border_color="#FF000000"
+                    app:civ_border_width="2dp" />
 
-</RelativeLayout>
+                <TextView
+                    android:id="@+id/Profile"
+                    android:layout_width="95dp"
+                    android:layout_height="38dp"
+                    android:layout_alignStart="@+id/profile_image"
+                    android:layout_alignBottom="@+id/view"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="-1dp"
+                    android:layout_marginTop="13dp"
+                    android:layout_marginBottom="107dp"
+                    android:text="Profile"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    tools:ignore="TextSizeCheck" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/profile_image"
+                    android:layout_alignBottom="@+id/profile_image"
+                    android:layout_marginStart="11dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginBottom="26dp"
+                    android:layout_toEndOf="@+id/profile_image"
+                    android:text="username_one23" />
+
+                <ImageButton
+                    android:id="@+id/button_settings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="245dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="9dp"
+                    android:layout_toEndOf="@+id/Profile"
+                    android:background="#00FFFFFF"
+                    android:clickable="true"
+                    android:contentDescription="settings"
+                    android:focusable="true"
+                    android:minWidth="50dp"
+                    android:src="@drawable/baseline_settings_24" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Report"
+                android:textSize="30sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/report_background"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="10dp"
+                    android:paddingEnd="16dp"
+                    android:paddingRight="16dp"
+                    android:paddingBottom="10dp">
+
+                    <TextView
+                        android:id="@+id/textView6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="kcal burnt"
+                        android:textColor="#000000"
+                        android:textSize="25sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <View
+                        android:id="@+id/view3"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginEnd="24dp"
+                        android:background="@color/grey"
+                        app:layout_constraintEnd_toEndOf="@+id/textView6"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+                    <androidx.viewpager2.widget.ViewPager2
+                        android:id="@+id/viewPager2"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+                    <com.google.android.material.tabs.TabLayout
+                        android:id="@+id/tabLayout2"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="64dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="64dp"
+                        android:background="@drawable/tab_background"
+                        android:contentDescription="nothing"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/viewPager2"
+                        app:tabGravity="fill"
+                        app:tabIndicatorAnimationMode="elastic"
+                        app:tabIndicatorColor="#00FFFFFF"
+                        app:tabIndicatorFullWidth="true"
+                        app:tabIndicatorGravity="stretch"
+                        app:tabInlineLabel="false"
+                        app:tabMode="fixed"
+                        app:tabSelectedTextColor="@color/white" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/report_background"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="10dp"
+                    android:paddingEnd="16dp"
+                    android:paddingRight="16dp"
+                    android:paddingBottom="10dp">
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="kcal burnt"
+                        android:textColor="#000000"
+                        android:textSize="25sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <View
+                        android:id="@+id/view2"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginEnd="24dp"
+                        android:background="@color/grey"
+                        app:layout_constraintEnd_toEndOf="@+id/textView5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+                    <androidx.viewpager2.widget.ViewPager2
+                        android:id="@+id/viewPager1"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+                    <com.google.android.material.tabs.TabLayout
+                        android:id="@+id/tabLayout1"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="64dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="64dp"
+                        android:background="@drawable/tab_background"
+                        android:contentDescription="nothing"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/viewPager1"
+                        app:tabGravity="fill"
+                        app:tabIndicatorAnimationMode="elastic"
+                        app:tabIndicatorColor="#00FFFFFF"
+                        app:tabIndicatorFullWidth="true"
+                        app:tabIndicatorGravity="stretch"
+                        app:tabInlineLabel="false"
+                        app:tabMode="fixed"
+                        app:tabSelectedTextColor="@color/white" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
