@@ -4,9 +4,7 @@ import MineFragment
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
 import com.example.assignment_test.databinding.ActivityMainBinding
-import com.example.assignment_test.databinding.FragmentMineBinding
 
 class MainActivity : AppCompatActivity(){
 
@@ -16,7 +14,21 @@ class MainActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         binding= ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        replaceFragment(MineFragment())
+        binding.bottomNavigationView.selectedItemId=R.id.home
+        replaceFragment(Fragment_home_page())
+        binding.bottomNavigationView.setOnItemSelectedListener {
+            when(it.itemId){
+                R.id.workout->replaceFragment(Fragment_workout())
+                R.id.settings->replaceFragment(MineFragment())
+                R.id.home->replaceFragment(Fragment_home_page())
+                else->{
+
+                }
+            }
+            true
+        }
+
+
     }
 
     private fun replaceFragment(fragment : Fragment)
