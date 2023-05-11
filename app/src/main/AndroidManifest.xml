@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
-    
+    xmlns:tools="http://schemas.android.com/tools" >
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -11,34 +11,60 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Assignment_test"
-        tools:targetApi="31">
+        tools:targetApi="31"
+        android:windowSoftInputMode = "adjustPan">
         <activity
             android:name=".HomePageActivity"
             android:exported="true" />
         <activity
+            android:name=".WorkOutPageActivity"
+            android:exported="true" />
+        <activity
             android:name=".LoginActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android:intent.action.second" />
             </intent-filter>
         </activity>
         <activity
             android:name=".SignUpActivity"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
-            android:name=".ProfileActivity"
-            android:exported="true"/>
+            android:name=".SignUpSub1Activity"
+            android:exported="true" />
         <activity
-            android:name=".SettingsActivity"
-            android:exported="true"/>
+            android:name=".SplashScreenActivity"
+            android:exported="true" />
+        <activity
+            android:name=".GenderSelectionActivity"
+            android:exported="true" />
+        <activity
+            android:name=".InputNameActivity"
+            android:exported="true" />
+        <activity
+            android:name=".InputAgeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".HeightSelectionActivity"
+            android:exported="true" />
+        <activity
+            android:name=".WeightSelectionActivity"
+            android:exported="true" />
+        <activity
+            android:name=".InputEmail_PwdActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Done_signUp_Activity"
+            android:exported="true" />
     </application>
 
 </manifest>
