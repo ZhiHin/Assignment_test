@@ -7,15 +7,14 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 
 class ViewPagerAdapter(fragmentManager: FragmentManager,lifecycle: Lifecycle): FragmentStateAdapter(fragmentManager,lifecycle) {
     override fun getItemCount(): Int {
-        return 4
+        return 3
     }
 
     override fun createFragment(position: Int): Fragment {
         return when(position){
-            0->FragmentSubFragmentDaily()
-            1->FragmentSubFragmentWeekly()
-            2->FragmentSubFragmentMonthly()
-            3->FragmentSubFragmentYearly()
+            0->fragment1()
+            1->fragment2()
+            2->fragment3()
             else->Fragment()
         }
     }
