@@ -57,7 +57,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="20dp"
                             android:layout_marginTop="5dp"
-                            android:text="1 Minute"
+                            android:text="30 Seconds"
                             android:textColor="#FF9800"
                             android:textSize="20dp" />
 
@@ -67,7 +67,7 @@
                         android:id="@+id/pushUpsGIF"
                         android:layout_width="200dp"
                         android:layout_height="match_parent"
-                        android:src="@drawable/gif_mount_climbing" />
+                        android:src="@drawable/gif_sit_up" />
 
                 </LinearLayout>
                 <!-- row 2 -->
@@ -89,15 +89,15 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="20dp"
                             android:layout_marginTop="20dp"
-                            android:text="Push-up"
-                            android:textSize="30dp" />
+                            android:text="Jumping Jacks"
+                            android:textSize="25dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="20dp"
                             android:layout_marginTop="5dp"
-                            android:text="1 Minute"
+                            android:text="40 Seconds"
                             android:textColor="#FF9800"
                             android:textSize="20dp" />
                     </LinearLayout>
@@ -105,7 +105,7 @@
                     <pl.droidsonroids.gif.GifImageView
                         android:layout_width="200dp"
                         android:layout_height="match_parent"
-                        android:src="@drawable/gif_mount_climbing" />
+                        android:src="@drawable/gif_jumping_jacks" />
 
                 </LinearLayout>
                 <!-- row 3 -->
@@ -127,7 +127,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="20dp"
                             android:layout_marginTop="20dp"
-                            android:text="Push-up"
+                            android:text="Squats"
                             android:textSize="30dp" />
 
                         <TextView
@@ -135,7 +135,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="20dp"
                             android:layout_marginTop="5dp"
-                            android:text="1 Minute"
+                            android:text="40 Seconds"
                             android:textColor="#FF9800"
                             android:textSize="20dp" />
                     </LinearLayout>
@@ -143,7 +143,7 @@
                     <pl.droidsonroids.gif.GifImageView
                         android:layout_width="200dp"
                         android:layout_height="match_parent"
-                        android:src="@drawable/gif_mount_climbing" />
+                        android:src="@drawable/gif_squat" />
 
                 </LinearLayout>
                 <!-- row 4 -->
@@ -165,15 +165,15 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="20dp"
                             android:layout_marginTop="20dp"
-                            android:text="Push-up"
-                            android:textSize="30dp" />
+                            android:text="Reverse Crunches "
+                            android:textSize="25dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="20dp"
                             android:layout_marginTop="5dp"
-                            android:text="1 Minute"
+                            android:text="40 Seconds"
                             android:textColor="#FF9800"
                             android:textSize="20dp" />
                     </LinearLayout>
@@ -181,7 +181,7 @@
                     <pl.droidsonroids.gif.GifImageView
                         android:layout_width="200dp"
                         android:layout_height="match_parent"
-                        android:src="@drawable/gif_mount_climbing" />
+                        android:src="@drawable/gif_reverse_crunches" />
 
                 </LinearLayout>
                 <!-- row 5 -->
@@ -203,7 +203,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="20dp"
                             android:layout_marginTop="20dp"
-                            android:text="Push-up"
+                            android:text="Plank"
                             android:textSize="30dp" />
 
                         <TextView
@@ -219,7 +219,7 @@
                     <pl.droidsonroids.gif.GifImageView
                         android:layout_width="200dp"
                         android:layout_height="match_parent"
-                        android:src="@drawable/gif_mount_climbing" />
+                        android:src="@drawable/gif_plank" />
 
                 </LinearLayout>
                 <!-- row 6 -->
@@ -241,7 +241,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="20dp"
                             android:layout_marginTop="20dp"
-                            android:text="Push-up"
+                            android:text="Run in Place"
                             android:textSize="30dp" />
 
                         <TextView
@@ -257,7 +257,7 @@
                     <pl.droidsonroids.gif.GifImageView
                         android:layout_width="200dp"
                         android:layout_height="match_parent"
-                        android:src="@drawable/gif_mount_climbing" />
+                        android:src="@drawable/gif_run_in_place" />
 
                 </LinearLayout>
                 <!-- row 7 -->
@@ -279,7 +279,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="20dp"
                             android:layout_marginTop="20dp"
-                            android:text="Push-up"
+                            android:text="Arm Circles"
                             android:textSize="30dp" />
 
                         <TextView
@@ -287,7 +287,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="20dp"
                             android:layout_marginTop="5dp"
-                            android:text="1 Minute"
+                            android:text="30 Seconds"
                             android:textColor="#FF9800"
                             android:textSize="20dp" />
                     </LinearLayout>
@@ -295,123 +295,10 @@
                     <pl.droidsonroids.gif.GifImageView
                         android:layout_width="200dp"
                         android:layout_height="match_parent"
-                        android:src="@drawable/gif_mount_climbing" />
+                        android:src="@drawable/gif_arm_circles" />
 
                 </LinearLayout>
-                <!-- row 8 -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    app:layout_constraintTop_toBottomOf="@id/firstRowContainer">
 
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <TextView
-
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="20dp"
-                            android:layout_marginTop="20dp"
-                            android:text="Push-up"
-                            android:textSize="30dp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="20dp"
-                            android:layout_marginTop="5dp"
-                            android:text="1 Minute"
-                            android:textColor="#FF9800"
-                            android:textSize="20dp" />
-                    </LinearLayout>
-
-                    <pl.droidsonroids.gif.GifImageView
-                        android:layout_width="200dp"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/gif_mount_climbing" />
-
-                </LinearLayout>
-                <!-- row 9 -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    app:layout_constraintTop_toBottomOf="@id/firstRowContainer">
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <TextView
-
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="20dp"
-                            android:layout_marginTop="20dp"
-                            android:text="Push-up"
-                            android:textSize="30dp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="20dp"
-                            android:layout_marginTop="5dp"
-                            android:text="1 Minute"
-                            android:textColor="#FF9800"
-                            android:textSize="20dp" />
-                    </LinearLayout>
-
-                    <pl.droidsonroids.gif.GifImageView
-                        android:layout_width="200dp"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/gif_mount_climbing" />
-
-                </LinearLayout>
-                <!-- row 10 -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    app:layout_constraintTop_toBottomOf="@id/firstRowContainer">
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <TextView
-
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="20dp"
-                            android:layout_marginTop="20dp"
-                            android:text="Push-up"
-                            android:textSize="30dp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="20dp"
-                            android:layout_marginTop="5dp"
-                            android:text="1 Minute"
-                            android:textColor="#FF9800"
-                            android:textSize="20dp" />
-                    </LinearLayout>
-
-                    <pl.droidsonroids.gif.GifImageView
-                        android:layout_width="200dp"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/gif_mount_climbing" />
-
-                </LinearLayout>
 
 
                 <!-- Add more child views as needed -->
