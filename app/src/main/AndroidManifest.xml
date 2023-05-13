@@ -39,7 +39,13 @@
             android:name=".SignUpActivity"
             android:exported="true" />
         <activity
-            android:name=".indoorWorkOutLvl1"
+            android:name=".indoorWorkOutLvl1_list_frag"
+            android:exported="true" />
+        <activity
+            android:name=".indoorWorkOutLvl2_list_frag"
+            android:exported="true" />
+        <activity
+            android:name=".indoorWorkOutLvl3_list_frag"
             android:exported="true" />
 
         <activity

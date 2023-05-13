@@ -2,12 +2,10 @@ package com.example.assignment_test
 
 import android.content.Intent
 import android.os.Bundle
-import android.text.TextUtils.replace
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageButton
 
 
@@ -26,17 +24,19 @@ class indoorWorkout_fragment : Fragment(R.layout.fragment_indoor_workout_fragmen
 
 
         indoorLvl1.setOnClickListener{
-            val intent = Intent(requireActivity(), indoorWorkOutLvl1::class.java)
+            val intent = Intent(requireActivity(), indoorWorkOutLvl1_list_frag::class.java)
             startActivity(intent)
         }
 
         indoorLvl2.setOnClickListener{
-            println("IMAGE TWO IS CLICKED")
+            val intent = Intent(requireActivity(), indoorWorkOutLvl2_list_frag::class.java)
+            startActivity(intent)
 
         }
 
         indoorLvl3.setOnClickListener{
-            println("IMAGE THREE IS CLICKED")
+            val intent = Intent(requireActivity(), indoorWorkOutLvl3_list_frag::class.java)
+            startActivity(intent)
 
         }
         return view
