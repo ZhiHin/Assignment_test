@@ -17,6 +17,17 @@ class Fragment_workout : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_workout, container, false)
 
+        val childFragment1 = indoorWorkout_fragment()
+        val transaction1 = childFragmentManager.beginTransaction()
+        transaction1.add(R.id.frame_layout1, childFragment1)
+        transaction1.commit()
+
+        val childFragment2 = outdoorWorkout_fragment()
+        val transaction2 = childFragmentManager.beginTransaction()
+        transaction2.add(R.id.frame_layout2, childFragment2)
+        transaction2.commit()
+
         return view
     }
+
 }
