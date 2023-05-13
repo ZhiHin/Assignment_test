@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil.setContentView
-import com.example.assignment_test.databinding.FragmentFragment1Binding
+import com.example.assignment_test.databinding.FragmentLinechart1Binding
 import com.example.assignment_test.databinding.FragmentMineBinding
 import com.github.mikephil.charting.charts.BarChart
 import com.github.mikephil.charting.charts.LineChart
@@ -24,14 +24,14 @@ import kotlin.random.Random
 
 class fragment1 : Fragment() {
 
-    private lateinit var binding : FragmentFragment1Binding
+    private lateinit var binding : FragmentLinechart1Binding
     private lateinit var line_chart: LineChart
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentFragment1Binding.inflate(layoutInflater)
+        binding = FragmentLinechart1Binding.inflate(layoutInflater)
         line_chart = binding.lineChart
         return binding.root
     }

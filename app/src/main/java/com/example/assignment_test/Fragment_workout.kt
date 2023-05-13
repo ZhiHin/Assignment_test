@@ -17,32 +17,6 @@ class Fragment_workout : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_workout, container, false)
 
-        val indoorworkoutFragment = indoorWorkout_fragment()
-        val outdoorworkoutFragment = outdoorWorkout_fragment()
-        val indoorBtn: Button = view.findViewById(R.id.indoor)
-        val outdoorBtn: Button = view.findViewById(R.id.outdoor)
-
-        childFragmentManager.beginTransaction().apply {
-            replace(R.id.workout, indoorworkoutFragment)
-            commit()
-        }
-
-        indoorBtn.setOnClickListener {
-            childFragmentManager.beginTransaction().apply {
-                replace(R.id.workout, indoorworkoutFragment)
-                addToBackStack(indoorworkoutFragment.tag)
-                commit()
-            }
-        }
-
-        outdoorBtn.setOnClickListener {
-            childFragmentManager.beginTransaction().apply {
-                replace(R.id.workout, outdoorworkoutFragment)
-                addToBackStack(outdoorworkoutFragment.tag)
-                commit()
-            }
-        }
-
         return view
     }
 }

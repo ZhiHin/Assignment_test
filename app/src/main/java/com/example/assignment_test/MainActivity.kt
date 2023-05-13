@@ -1,5 +1,6 @@
 package com.example.assignment_test
 
+import Fragment_report
 import MineFragment
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -21,6 +22,7 @@ class MainActivity : AppCompatActivity(){
                 R.id.workout->replaceFragment(Fragment_workout())
                 R.id.settings->replaceFragment(MineFragment())
                 R.id.home->replaceFragment(Fragment_home_page())
+                R.id.report->replaceFragment(Fragment_report())
                 else->{
 
                 }

@@ -6,17 +6,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.assignment_test.databinding.BottomsheetFragmentBinding
-import com.example.assignment_test.databinding.FragmentMineBinding
+import com.example.assignment_test.databinding.FragmentBottomSheetContactBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
-class BottomSheetFragment: BottomSheetDialogFragment() {
+class Fragment_bottom_sheet_contact: BottomSheetDialogFragment() {
 
-    private lateinit var binding: BottomsheetFragmentBinding
+    private lateinit var binding: FragmentBottomSheetContactBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        binding = BottomsheetFragmentBinding.inflate(inflater, container, false)
+        binding = FragmentBottomSheetContactBinding.inflate(inflater, container, false)
         return binding.root
     }
 

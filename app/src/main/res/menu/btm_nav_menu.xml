@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+
+
+    <item
+        android:id="@+id/home"
+        android:title="Home"
+        android:icon="@drawable/btmnav_home_icon"
+        />
     <item
         android:id="@+id/workout"
         android:title="Workout"
@@ -10,16 +17,6 @@
         android:id="@+id/report"
         android:title="Report"
         android:icon="@drawable/btmnav_monitor_icon"
-        />
-    <item
-        android:id="@+id/home"
-        android:title="Home"
-        android:icon="@drawable/btmnav_home_icon"
-        />
-    <item
-        android:id="@+id/achievement"
-        android:title="Special"
-        android:icon="@drawable/btmnav_settings_icon"
         />
     <item
         android:id="@+id/settings"
