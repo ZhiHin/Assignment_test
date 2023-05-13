@@ -23,28 +23,34 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
-        android:layout_width="411dp"
-        android:layout_height="611dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <ScrollView
+        android:layout_width="404dp"
+        android:layout_height="684dp"
+        android:contentDescription="scrollViewforWorkoutFragments"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView29">
 
-        <FrameLayout
-            android:id="@+id/frame_layout1"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="300dp">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-        </FrameLayout>
+            <FrameLayout
+                android:id="@+id/frame_layout1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-        <FrameLayout
-            android:id="@+id/frame_layout2"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            </FrameLayout>
 
-        </FrameLayout>
-    </LinearLayout>
+            <FrameLayout
+                android:id="@+id/frame_layout2"
+                android:layout_width="match_parent"
+                android:layout_height="700dp">
+
+            </FrameLayout>
+
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
