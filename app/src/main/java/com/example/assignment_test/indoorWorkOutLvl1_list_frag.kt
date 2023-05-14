@@ -2,11 +2,13 @@ package com.example.assignment_test
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 
 class indoorWorkOutLvl1_list_frag : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.d("Fragment", "indoorWorkOutLvl1_frag created")
         setContentView(R.layout.activity_indoor_work_out_lvl1_list_frag)
 
         val indoorBtnStartLvl1: Button =  findViewById(R.id.indoorStartBtnLvl1)

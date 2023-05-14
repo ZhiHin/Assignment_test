@@ -18,5 +18,9 @@
         <item name="android:textSize">48sp</item>
     </style>
 
+    <style name="CircularDeterminateProgressBar">
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:progressDrawable">@drawable/progressbar_circular</item>
+    </style>
 
 </resources>
