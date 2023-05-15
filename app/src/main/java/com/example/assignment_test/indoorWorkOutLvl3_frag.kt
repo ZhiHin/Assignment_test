@@ -47,6 +47,12 @@ class indoorWorkOutLvl3_frag : Fragment() {
         progressBar = view.findViewById<ProgressBar>(R.id.progress_bar)
         progressBar.progress = 0
 
+        val backButton: ImageButton = view.findViewById(R.id.backBtn)
+
+        backButton.setOnClickListener {
+            requireActivity().supportFragmentManager.popBackStack()
+        }
+
         currentExercise = exercises[currentExercisePosition]
 
         nameTextView.text = currentExercise.name

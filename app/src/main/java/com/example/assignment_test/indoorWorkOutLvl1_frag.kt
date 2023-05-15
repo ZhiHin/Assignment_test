@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.Window
+import android.widget.ImageButton
 import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
@@ -30,6 +31,12 @@ class indoorWorkOutLvl1_frag : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_indoor_work_out_lvl1_frag, container, false)
+
+        val backButton: ImageButton = view.findViewById(R.id.backBtn)
+
+        backButton.setOnClickListener {
+            requireActivity().supportFragmentManager.popBackStack()
+        }
 
         nameTextView = view.findViewById<TextView>(R.id.nameWorkout)
         gifImageView = view.findViewById<GifImageView>(R.id.gifImageView)

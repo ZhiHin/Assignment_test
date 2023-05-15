@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.ImageButton
 
 class indoorWorkOutLvl1_list_frag : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -12,7 +13,10 @@ class indoorWorkOutLvl1_list_frag : AppCompatActivity() {
         setContentView(R.layout.activity_indoor_work_out_lvl1_list_frag)
 
         val indoorBtnStartLvl1: Button =  findViewById(R.id.indoorStartBtnLvl1)
-
+        val backButton: ImageButton = findViewById(R.id.backWorkout)
+        backButton.setOnClickListener {
+            finish()
+        }
 
         indoorBtnStartLvl1.setOnClickListener{
             supportFragmentManager.beginTransaction().apply {
