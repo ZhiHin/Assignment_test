@@ -44,6 +44,9 @@ class Fragment_report : Fragment() {
                 2->{
                     tab.text="Month"
                 }
+                3->{
+                    tab.text="Year"
+                }
             }
         }.attach()
 

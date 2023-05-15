@@ -198,6 +198,7 @@
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/name_layout"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:clickable="true">
@@ -223,6 +224,7 @@
                                 android:textStyle="bold" />
 
                             <TextView
+                                android:id="@+id/name_value"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
@@ -247,6 +249,7 @@
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/gender_layout"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
@@ -271,6 +274,7 @@
                                 android:textStyle="bold" />
 
                             <TextView
+                                android:id="@+id/gender_value"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
@@ -295,8 +299,10 @@
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/birthdate_layout"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:onClick="openDatePicker">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -319,11 +325,12 @@
                                 android:textStyle="bold" />
 
                             <TextView
+                                android:id="@+id/Birthdate_value"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="center|right"
-                                android:text="username_one23"
+                                android:text="11 March 2004"
                                 android:textColor="#7E7E7E" />
 
                             <ImageView
