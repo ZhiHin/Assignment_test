@@ -27,19 +27,19 @@ class LoginActivity : AppCompatActivity() {
 
 
         loginButton.setOnClickListener {
-            ////SignUp function
+            //SignUp function
 //            val username: TextView = findViewById(R.id.Login_username_input)
 //            val pw: TextView = findViewById(R.id.Login_password_Input)
-//            val user = User(username.text.toString(), pw.text.toString())
-//            System.out.println(username.text.toString())
-//            System.out.println(pw.text.toString())
-//            System.out.println(user)
-//            database.child(user.username!!).setValue(user).addOnSuccessListener {
+//
+//            val database = FirebaseDatabase.getInstance().getReference("Users")
+//            val key = database.push().key //generate unique key for the user
+//            val user = User(username.text.toString(), pw.text.toString()) //pass the unique key to the User object constructor
+//            database.child(key.toString()).setValue(user).addOnSuccessListener {
 //                Toast.makeText(this, "Successfully Saved", Toast.LENGTH_SHORT).show()
 //            }.addOnFailureListener {
 //                Toast.makeText(this, "Failed to Save", Toast.LENGTH_SHORT).show()
 //            }
-            // Check Firebase Realtime Database connection
+//          //   Check Firebase Realtime Database connection
 //            FirebaseDatabase.getInstance().getReference(".info/connected")
 //                .addValueEventListener(object : ValueEventListener {
 //                    override fun onDataChange(snapshot: DataSnapshot) {
@@ -55,11 +55,10 @@ class LoginActivity : AppCompatActivity() {
 //                        Log.e("DATABASE", "Connection error: $error")
 //                    }
 //                })
-//            val username: TextView = findViewById(R.id.Login_username_input)
-//            val pw: TextView = findViewById(R.id.Login_password_Input)
 
 
-            ////login func
+
+            //login func
 //            signIn()
 
             val intent = Intent(this, MainActivity::class.java)
@@ -70,32 +69,25 @@ class LoginActivity : AppCompatActivity() {
     private fun signIn() {
         val username = findViewById<EditText>(R.id.Login_username_input).text.toString()
         val password = findViewById<EditText>(R.id.Login_password_Input).text.toString()
-
         if (username.isEmpty() || password.isEmpty()) {
             Toast.makeText(this, "Please enter both username and password", Toast.LENGTH_SHORT).show()
             return
         }
 
-        database.child(username).addListenerForSingleValueEvent(object : ValueEventListener {
+        database.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                val user = dataSnapshot.getValue(User::class.java)
-                System.out.println(user)
-                System.out.println(user?.username)
-                System.out.println(username)
-                System.out.println(user?.pw)
-                System.out.println(password)
-                if (user == null) {
-                    Toast.makeText(applicationContext, "Invalid username or password", Toast.LENGTH_SHORT).show()
-                    return
+                for (userSnapshot in dataSnapshot.children) {
+                    val user = userSnapshot.getValue(User::class.java)
+                    if (user?.username == username && user.pw == password) {
+                        val userID = userSnapshot.key // get the userID from the snapshot
+                        val intent = Intent(applicationContext, MainActivity::class.java)
+                        intent.putExtra("userID", userID) // pass the userID to MainActivity
+                        startActivity(intent)
+                        finish()
+                        return
+                    }
                 }
-
-                if (user.pw == password) {
-                    val intent = Intent(applicationContext, MainActivity::class.java)
-                    startActivity(intent)
-                    finish()
-                } else {
-                    Toast.makeText(applicationContext, "Invalid username or password", Toast.LENGTH_SHORT).show()
-                }
+                Toast.makeText(applicationContext, "Invalid username or password", Toast.LENGTH_SHORT).show()
             }
 
             override fun onCancelled(databaseError: DatabaseError) {

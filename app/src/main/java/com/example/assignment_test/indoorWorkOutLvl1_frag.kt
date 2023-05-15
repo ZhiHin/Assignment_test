@@ -2,6 +2,7 @@ package com.example.assignment_test
 
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.util.Log
 import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
@@ -13,6 +14,10 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.fragment.app.Fragment
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import pl.droidsonroids.gif.GifImageView
 import java.lang.Math.ceil
 
@@ -25,7 +30,6 @@ class indoorWorkOutLvl1_frag : Fragment() {
     private var timerStarted = false
     private lateinit var nameTextView: TextView
     private lateinit var gifImageView: GifImageView
-    private var window: Window? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
@@ -44,6 +48,7 @@ class indoorWorkOutLvl1_frag : Fragment() {
         val nextButton = view.findViewById<AppCompatImageView>(R.id.nextWorkout)
         val previousButton = view.findViewById<AppCompatImageView>(R.id.previousWorkout)
         val pauseButton = view.findViewById<AppCompatImageView>(R.id.pauseWorkout)
+        getWorkout()
         progressBar = view.findViewById<ProgressBar>(R.id.progress_bar)
         progressBar.progress = 0
 
@@ -150,8 +155,12 @@ class indoorWorkOutLvl1_frag : Fragment() {
                     progressBar.progress = 100 // Set progress to 100% to indicate completion
                     nameTextView.text = "Completed" // Set text to "Complete"
                     timerTextView.text = "Nice !"
+                    getWorkout()
+                    System.out.println("HI")
 //                    gifImageView.setImageResource(R.drawable.) // Set image to check mark icon
+
                     return // Stop looping
+
                 }
                 currentExercise = exercises[currentExercisePosition]
                 progressBar.progress = 0
@@ -183,5 +192,36 @@ class indoorWorkOutLvl1_frag : Fragment() {
 
     data class Exercise(val name: String, val gifResourceId: Int, val duration: Int)
 
+
+
+}
+
+private var workoutListener: ValueEventListener? = null
+private fun getWorkout() {
+    val workoutRef = FirebaseDatabase.getInstance().getReference("Workout")
+    val workoutId = "w1"
+    println("I AM BEING CALLED")
+    workoutListener = workoutRef.child(workoutId).addValueEventListener(object : ValueEventListener {
+        override fun onDataChange(dataSnapshot: DataSnapshot) {
+            // Handle data change event
+            val workoutData = dataSnapshot.getValue(indoorw1::class.java)
+            // Access the workout data object here
+            val workoutType = workoutData?.workout_type
+            val caloriesBurned = workoutData?.calories_burned
+            val duration = workoutData?.duration
+
+            // Print the retrieved data to the console
+            println("Workout Type: $workoutType")
+            println("Calories Burned: $caloriesBurned")
+            println("Duration: $duration")
+            // Remove the listener
+            workoutRef.child(workoutId).removeEventListener(workoutListener!!)
+            workoutListener = null
+        }
+
+        override fun onCancelled(error: DatabaseError) {
+            // Handle cancelled event
+        }
+    })
 }
 
