@@ -46,8 +46,7 @@ class indoorWorkOutLvl2_frag : Fragment() {
         val pauseButton = view.findViewById<AppCompatImageView>(R.id.pauseWorkout)
         progressBar = view.findViewById<ProgressBar>(R.id.progress_bar)
         progressBar.progress = 0
-        val window = requireActivity()!!.window
-        window!!.setBackgroundDrawableResource(android.R.color.transparent)
+
 
         currentExercise = exercises[currentExercisePosition]
 
@@ -182,4 +181,6 @@ class indoorWorkOutLvl2_frag : Fragment() {
     }
 
     data class Exercise(val name: String, val gifResourceId: Int, val duration: Int)
+
+
 }

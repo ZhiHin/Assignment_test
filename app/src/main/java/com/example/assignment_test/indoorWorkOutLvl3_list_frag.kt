@@ -15,7 +15,7 @@ class indoorWorkOutLvl3_list_frag : AppCompatActivity() {
         indoorBtnStartLvl3.setOnClickListener{
             supportFragmentManager.beginTransaction().apply {
                 replace(R.id.indoorLvl3Frag, indoorWorkOutLvl3_frag())
-                addToBackStack(null)
+                addToBackStack("indoorWorkOutLvl3_list_frag")
                 commit()
             }
             System.out.println("FRAGMENT IS CLICKED")

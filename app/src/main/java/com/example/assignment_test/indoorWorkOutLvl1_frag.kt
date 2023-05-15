@@ -1,24 +1,17 @@
 package com.example.assignment_test
 
-import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
-import android.text.TextUtils.replace
-import androidx.fragment.app.Fragment
+import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.Window
-import android.view.WindowManager
-import android.widget.Button
-import android.widget.ImageButton
 import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.widget.AppCompatImageView
-import androidx.core.content.ContextCompat
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import androidx.fragment.app.Fragment
 import pl.droidsonroids.gif.GifImageView
 import java.lang.Math.ceil
 
@@ -46,8 +39,6 @@ class indoorWorkOutLvl1_frag : Fragment() {
         val pauseButton = view.findViewById<AppCompatImageView>(R.id.pauseWorkout)
         progressBar = view.findViewById<ProgressBar>(R.id.progress_bar)
         progressBar.progress = 0
-        val window = requireActivity()!!.window
-        window!!.setBackgroundDrawableResource(android.R.color.transparent)
 
         currentExercise = exercises[currentExercisePosition]
 
@@ -55,6 +46,9 @@ class indoorWorkOutLvl1_frag : Fragment() {
         gifImageView.setImageResource(currentExercise.gifResourceId)
 
         startTimer(timerTextView)
+
+
+
 
         nextButton.setOnClickListener {
 
@@ -181,4 +175,6 @@ class indoorWorkOutLvl1_frag : Fragment() {
     }
 
     data class Exercise(val name: String, val gifResourceId: Int, val duration: Int)
+
 }
+
