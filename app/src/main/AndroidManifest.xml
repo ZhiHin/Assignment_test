@@ -11,8 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Assignment_test"
-        tools:targetApi="31"
-        android:windowSoftInputMode = "adjustPan">
+        android:windowSoftInputMode="adjustPan"
+        tools:targetApi="31" >
         <activity
             android:name=".HomePageActivity"
             android:exported="true" />
@@ -65,6 +65,15 @@
         <activity
             android:name=".Done_signUp_Activity"
             android:exported="true" />
+        <activity
+            android:name=".PlantingTreeActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

@@ -124,4 +124,15 @@
     <string name="havaaniceday">Have a nice day 😉</string>
     <string name="male">Male</string>
     <string name="Female">Female</string>
+    <string name="workOutPointTextField"></string>
+    <string name="leaderboard_user_image">The user image of leaderboard ranking</string>
+    <string name="user_leaderboard_name1" />
+    <string name="user_leaderboard_name3" />
+    <string name="user_leaderboard_name2" />
+    <string name="user_contributed_work_out_point1" />
+    <string name="user_contributed_work_out_point2" />
+    <string name="user_contributed_work_out_point3" />
+    <string name="leaderboard_title">Leaderboard\n</string>
+    <string name="planting_tree_title">Power Plant Challenge</string>
+    <string name="power_plant_score_text"></string>
 </resources>
