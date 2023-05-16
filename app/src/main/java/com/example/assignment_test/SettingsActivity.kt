@@ -1,15 +1,16 @@
 package com.example.assignment_test
 
 import android.os.Bundle
+import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
+import androidx.preference.SwitchPreferenceCompat
 import com.example.assignment_test.databinding.SettingsActivityBinding
 
 
 class SettingsActivity : AppCompatActivity() {
 
-    private lateinit var binding: SettingsActivityBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,8 +23,9 @@ class SettingsActivity : AppCompatActivity() {
         }
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-
-
+        findViewById<ImageButton>(R.id.backButton).setOnClickListener{
+            onBackPressed()
+        }
     }
 
 

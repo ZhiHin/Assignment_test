@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E2D6F8"
-    tools:context=".HomePageActivity">
+    android:background="#E2D6F8">
 
     <ScrollView
         android:id="@+id/scrollView3"
@@ -156,25 +155,33 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <TextView
-                android:id="@+id/textView15"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/curved_rectangle_text"
-                android:text="Discover The Many Benefits Of This Fitness App"
-                android:textAlignment="center"
-                android:textColor="#333333"
-                android:textSize="20dp"
-                android:textStyle="bold" />
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp">
 
-            <androidx.viewpager2.widget.ViewPager2
-                android:id="@+id/viewPager2"
-                android:layout_width="match_parent"
-                android:layout_height="300dp">
+                <TextView
+                    android:id="@+id/textView15"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/curved_rectangle_text"
+                    android:text="Discover The Many Benefits Of This Fitness App"
+                    android:textAlignment="center"
+                    android:textColor="#333333"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
 
-            </androidx.viewpager2.widget.ViewPager2>
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/viewPager2"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp">
+
+                </androidx.viewpager2.widget.ViewPager2>
+            </LinearLayout>
 
 
         </LinearLayout>

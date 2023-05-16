@@ -2,9 +2,12 @@ package com.example.assignment_test
 
 import Fragment_report
 import MineFragment
+import android.content.Context
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
+import androidx.preference.PreferenceManager
 import com.example.assignment_test.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity(){
@@ -30,6 +33,14 @@ class MainActivity : AppCompatActivity(){
             true
         }
 
+        val sharedPreferences=getSharedPreferences("Mode", Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        val nightMode = sharedPreferences.getBoolean("night",false)
+
+        if(nightMode)
+        {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        }
 
     }
 

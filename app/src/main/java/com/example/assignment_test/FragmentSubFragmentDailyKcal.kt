@@ -8,8 +8,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.RequiresApi
-import com.example.assignment_test.databinding.FragmentMonthlylinechartBinding
-import com.example.assignment_test.databinding.FragmentYearlylinechartBinding
+import com.example.assignment_test.databinding.FragmentDailyDurationChartBinding
+import com.example.assignment_test.databinding.FragmentDailyKcalChartBinding
 import com.github.mikephil.charting.charts.LineChart
 import com.github.mikephil.charting.components.XAxis
 import com.github.mikephil.charting.data.Entry
@@ -20,9 +20,10 @@ import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
 
-class FragmentSubFragmentYearly : Fragment() {
 
-    private lateinit var binding : FragmentYearlylinechartBinding
+class FragmentSubFragmentDailyKcal : Fragment() {
+
+    private lateinit var binding : FragmentDailyKcalChartBinding
     private lateinit var line_chart: LineChart
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -30,37 +31,41 @@ class FragmentSubFragmentYearly : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentYearlylinechartBinding.inflate(layoutInflater)
-        line_chart = binding.linechart
+        binding = FragmentDailyKcalChartBinding.inflate(layoutInflater)
+
+
+        line_chart = binding.lineChart
         binding.rightButton.setOnClickListener{
             setUpLineChart()
         }
 
+        val currentDate = LocalDate.now()
+        val dateTextView = binding.dateTextview
+
         binding.rightButton.setColorFilter(Color.parseColor("#808080"))
 
-        val dateTextView = binding.yearTextview
+
 
         // Set initial date to today's date
-        val currentDate = LocalDate.now()
         updateDate(currentDate)
-        val currentTextView=binding.yearTextview.text.toString()
 
         binding.rightButton.setOnClickListener {
-            val textViewDate = LocalDate.parse("01 "+ dateTextView.text, DateTimeFormatter.ofPattern("dd MMM yyyy"))
-            val nextDate = textViewDate.plusMonths(1)
+            val textViewDate = LocalDate.parse(dateTextView.text, DateTimeFormatter.ofPattern("d MMMM yyyy"))
+
+            val nextDate = textViewDate.plusDays(1)
             if(nextDate <= currentDate){
                 updateDate(nextDate)
-                val changedTextView=binding.yearTextview.text.toString()
-                if(currentTextView == changedTextView)
+                if(nextDate == currentDate)
                 {
                     binding.rightButton.setColorFilter(Color.parseColor("#808080"))
                 }
             }
+
         }
 
         binding.leftButton.setOnClickListener {
-            val textViewDate = LocalDate.parse("01 " + dateTextView.text, DateTimeFormatter.ofPattern("dd MMM yyyy"))
-            val prevDate= textViewDate.minusMonths(1)
+            val textViewDate = LocalDate.parse(dateTextView.text, DateTimeFormatter.ofPattern("d MMMM yyyy"))
+            val prevDate= textViewDate.minusDays(1)
             binding.rightButton.clearColorFilter()
             updateDate(prevDate)
         }
@@ -70,8 +75,8 @@ class FragmentSubFragmentYearly : Fragment() {
     }
     @RequiresApi(Build.VERSION_CODES.O)
     private fun updateDate(date: LocalDate) {
-        val formatter = DateTimeFormatter.ofPattern("MMM yyyy")
-        binding.yearTextview.text = date.format(formatter)
+        val formatter = DateTimeFormatter.ofPattern("d MMMM yyyy")
+        binding.dateTextview.text = date.format(formatter)
     }
 
     override fun onResume() {
@@ -81,13 +86,13 @@ class FragmentSubFragmentYearly : Fragment() {
     }
 
     private fun setUpLineChart(){
-        val chart = binding.linechart
+        val chart = binding.lineChart
 
         // create a list of days to use as x-axis labels
-        val hours = listOf("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec")
+        val hours = listOf("12.00", "14.00", "16.00", "18.00", "20.00", "22.00", "24.00")
 
         // create a list of durations for each day of the week (you'll need to replace this with your actual data)
-        val durations = listOf(2f, 4.3f, 6.9f,10.5f,9f,103.3f,21.3f,2f, 4.3f,14.2f,9f,103.3f)
+        val durations = listOf(2f, 4.3f, 6.9f,10.5f, 12f, 13.1f,21.3f)
 
         // create an ArrayList of Entry objects to represent the data points on the chart
         val entries = ArrayList<Entry>()
@@ -96,7 +101,7 @@ class FragmentSubFragmentYearly : Fragment() {
         }
 
         // create a LineDataSet object to hold the data and customize the appearance of the line
-        val dataSet = LineDataSet(entries, "Monthly Report")
+        val dataSet = LineDataSet(entries, "Weekly Report")
         dataSet.color = Color.BLUE
         dataSet.valueTextColor = Color.BLACK
         dataSet.setDrawCircles(true)

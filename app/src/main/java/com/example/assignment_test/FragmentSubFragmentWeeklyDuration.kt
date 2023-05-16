@@ -7,22 +7,23 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.annotation.RequiresApi
-import com.example.assignment_test.databinding.FragmentDailylinechartBinding
+import com.example.assignment_test.databinding.FragmentWeeklyDurationChartBinding
 import com.github.mikephil.charting.charts.LineChart
 import com.github.mikephil.charting.components.XAxis
 import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
+import java.time.DayOfWeek
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
+import java.time.temporal.TemporalAdjusters
 
+class FragmentSubFragmentWeeklyDuration : Fragment() {
 
-
-class FragmentSubFragmentDaily : Fragment() {
-
-    private lateinit var binding : FragmentDailylinechartBinding
+    private lateinit var binding : FragmentWeeklyDurationChartBinding
     private lateinit var line_chart: LineChart
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -30,57 +31,62 @@ class FragmentSubFragmentDaily : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentDailylinechartBinding.inflate(layoutInflater)
-
+        binding = FragmentWeeklyDurationChartBinding.inflate(layoutInflater)
 
         line_chart = binding.lineChart
         binding.rightButton.setOnClickListener{
             setUpLineChart()
         }
 
-        val currentDate = LocalDate.now()
-        val dateTextView = binding.dateTextview
-
         binding.rightButton.setColorFilter(Color.parseColor("#808080"))
 
-
+        val dateTextView = binding.weekRangeTextview
 
         // Set initial date to today's date
+        val currentDate = LocalDate.now()
         updateDate(currentDate)
+        val currentTextView=binding.weekRangeTextview.text.toString()
 
         binding.rightButton.setOnClickListener {
-            val textViewDate = LocalDate.parse(dateTextView.text, DateTimeFormatter.ofPattern("d MMMM yyyy"))
-
-            val nextDate = textViewDate.plusDays(1)
+            val textViewDate = LocalDate.parse(dateTextView.text.toString().substringBefore("-")+binding.yearTextview.text.toString(),
+                DateTimeFormatter.ofPattern("dd MMM yyyy"))
+            val nextDate= textViewDate.plusWeeks(1)
             if(nextDate <= currentDate){
                 updateDate(nextDate)
-                if(nextDate == currentDate)
+                val changedTextView=binding.weekRangeTextview.text.toString()
+                if(currentTextView == changedTextView)
                 {
+                    Toast.makeText(requireContext(),"$currentTextView + $changedTextView",Toast.LENGTH_LONG).show()
                     binding.rightButton.setColorFilter(Color.parseColor("#808080"))
                 }
             }
-
         }
 
         binding.leftButton.setOnClickListener {
-            val textViewDate = LocalDate.parse(dateTextView.text, DateTimeFormatter.ofPattern("d MMMM yyyy"))
-            val prevDate= textViewDate.minusDays(1)
+            val currentDate = LocalDate.parse(dateTextView.text.toString().substringBefore("-")+binding.yearTextview.text.toString(),
+                DateTimeFormatter.ofPattern("dd MMM yyyy"))
+            val prevDate= currentDate.minusWeeks(1)
             binding.rightButton.clearColorFilter()
             updateDate(prevDate)
         }
 
-
         return binding.root
     }
+
     @RequiresApi(Build.VERSION_CODES.O)
-    private fun updateDate(date: LocalDate) {
-        val formatter = DateTimeFormatter.ofPattern("d MMMM yyyy")
-        binding.dateTextview.text = date.format(formatter)
+    private fun updateDate(date:LocalDate) {
+        val startOfWeek = date.with(TemporalAdjusters.previousOrSame(DayOfWeek.MONDAY))
+        val endOfWeek = startOfWeek.plusDays(6)
+        val formatter = DateTimeFormatter.ofPattern("dd MMM")
+        val startFormatted = startOfWeek.format(formatter)
+        val endFormatted = endOfWeek.format(formatter)
+        val year=date.year
+        binding.weekRangeTextview.text = "$startFormatted - $endFormatted"
+        binding.yearTextview.text = "$year"
     }
 
     override fun onResume() {
         super.onResume()
-        // assuming you have a LineChart object named "chart" in your layout
         setUpLineChart()
     }
 
@@ -88,14 +94,14 @@ class FragmentSubFragmentDaily : Fragment() {
         val chart = binding.lineChart
 
         // create a list of days to use as x-axis labels
-        val hours = listOf("12.00", "14.00", "16.00", "18.00", "20.00", "22.00", "24.00")
+        val daysOfWeek = listOf("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun")
 
         // create a list of durations for each day of the week (you'll need to replace this with your actual data)
         val durations = listOf(2f, 4.3f, 6.9f,10.5f, 12f, 13.1f,21.3f)
 
         // create an ArrayList of Entry objects to represent the data points on the chart
         val entries = ArrayList<Entry>()
-        for (i in 0 until hours.size) {
+        for (i in 0 until daysOfWeek.size) {
             entries.add(Entry(i.toFloat(), durations[i]))
         }
 
@@ -114,10 +120,10 @@ class FragmentSubFragmentDaily : Fragment() {
         val xAxis = chart.xAxis
         xAxis.position = XAxis.XAxisPosition.BOTTOM
         xAxis.setDrawGridLines(false)
-        xAxis.labelCount = hours.size
-        xAxis.valueFormatter = IndexAxisValueFormatter(hours)
+        xAxis.labelCount = daysOfWeek.size
+        xAxis.valueFormatter = IndexAxisValueFormatter(daysOfWeek)
         xAxis.setAxisMinimum(0f)
-        xAxis.setAxisMaximum(hours.size.toFloat() - 1)
+        xAxis.setAxisMaximum(daysOfWeek.size.toFloat() - 1)
         xAxis.granularity = 1f
 
         // customize the appearance of the chart's y-axis
@@ -139,6 +145,5 @@ class FragmentSubFragmentDaily : Fragment() {
         chart.animateY(500)
         chart.invalidate()
     }
+
 }
-
-

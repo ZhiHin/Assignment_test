@@ -1,17 +1,10 @@
-import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.viewpager2.widget.ViewPager2
-import com.example.assignment_test.ProfileActivity
-import com.example.assignment_test.SettingsActivity
 import com.example.assignment_test.ViewPagerAdapter
-import com.example.assignment_test.databinding.FragmentMineBinding
 import com.example.assignment_test.databinding.FragmentReportBinding
-import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
 class Fragment_report : Fragment() {
@@ -44,6 +37,9 @@ class Fragment_report : Fragment() {
                 2->{
                     tab.text="Month"
                 }
+                3->{
+                    tab.text="Year"
+                }
             }
         }.attach()
 
@@ -61,6 +57,9 @@ class Fragment_report : Fragment() {
                 }
                 2->{
                     tab.text="Month"
+                }
+                3->{
+                    tab.text="Year"
                 }
             }
         }.attach()

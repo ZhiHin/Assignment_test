@@ -2,24 +2,18 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    style="@style/layout_style"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#EFEFEF">
+    android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/textView"
+        style="@style/top_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/top_bar"
-        android:paddingStart="10dp"
-        android:paddingTop="8dp"
-        android:paddingEnd="8dp"
-        android:paddingBottom="8dp"
         android:text="Profile"
-        android:textColor="#FFFFFF"
-        android:textSize="30sp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -42,77 +36,110 @@
             android:paddingStart="10dp"
             android:paddingEnd="10dp">
 
-            <RelativeLayout
-                android:id="@+id/relativeLayout"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout"
+                style="@style/sublayout_style"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_marginTop="10dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
                 android:background="@drawable/report_background"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profile_image"
+                    android:layout_width="74dp"
+                    android:layout_height="75dp"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginTop="16dp"
+                    android:clickable="false"
+                    android:contentDescription="unmeaningful"
+                    android:focusable="true"
+                    android:src="@drawable/profilepicture"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
                 <TextView
-                    android:id="@+id/textView3"
+                    android:id="@+id/topname_value"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignTop="@+id/profile_image"
-                    android:layout_alignBottom="@+id/profile_image"
-                    android:layout_marginStart="11dp"
-                    android:layout_marginTop="3dp"
-                    android:layout_marginBottom="26dp"
-                    android:layout_toEndOf="@+id/profile_image"
-                    android:text="username_one23" />
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:text="username_one23"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toEndOf="@+id/profile_image"
+                    app:layout_constraintTop_toTopOf="@+id/profile_image" />
+
+                <Button
+                    android:id="@+id/profile_picture_change_button"
+                    android:layout_width="178dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:includeFontPadding="true"
+                    android:text="Change Profile Image"
+                    android:textColor="?android:attr/textColorSecondary"
+                    android:textSize="12sp"
+                    app:iconPadding="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/profile_image"
+                    app:layout_constraintTop_toBottomOf="@+id/profile_image" />
 
                 <ImageButton
                     android:id="@+id/button_settings"
+                    style="@style/settings_style"
                     android:layout_width="wrap_content"
                     android:layout_height="57dp"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginStart="248dp"
-                    android:layout_marginTop="-4dp"
-                    android:layout_marginEnd="4dp"
+                    android:layout_marginEnd="16dp"
                     android:background="#00FFFFFF"
                     android:clickable="true"
                     android:contentDescription="settings"
                     android:focusable="true"
                     android:minWidth="50dp"
-                    android:src="@drawable/baseline_settings_24" />
+                    android:src="@drawable/baseline_settings_24"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/profile_image"
-                    android:layout_width="75dp"
-                    android:layout_height="60dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginStart="19dp"
-                    android:layout_marginTop="19dp"
-                    android:layout_marginBottom="21dp"
-                    android:clickable="true"
-                    android:contentDescription="unmeaningful"
-                    android:focusable="true"
-                    android:src="@drawable/profilepicture"
-                    app:civ_border_color="#FF000000"
-                    app:civ_border_width="2dp" />
+                <TextView
+                    android:id="@+id/textView17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="17 Years Old"
+                    android:textColor="?android:attr/textColorPrimary"
+                    app:layout_constraintEnd_toEndOf="@+id/topname_value"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/topname_value"
+                    app:layout_constraintTop_toBottomOf="@+id/topname_value" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-            </RelativeLayout>
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:paddingStart="10dp"
+                android:text="Account details"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@+id/constraintLayout"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraintLayout"
+                android:id="@+id/constraintLayout4"
+                style="@style/sublayout_style"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
                 android:background="@drawable/report_background"
                 android:paddingStart="15dp"
-                android:paddingTop="8dp"
+                android:paddingTop="5dp"
                 android:paddingEnd="15dp"
-                android:paddingBottom="8dp"
+                android:paddingBottom="5dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.842"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/relativeLayout">
+                app:layout_constraintTop_toBottomOf="@+id/textView14">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -125,32 +152,11 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <TextView
-                            android:id="@+id/textView14"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Profile Information"
-                            android:textSize="18sp"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                        <View
-                            android:layout_width="0dp"
-                            android:layout_height="1dp"
-                            android:background="#C1C1C1"
-                            app:layout_constraintEnd_toEndOf="@+id/textView14"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/textView14" />
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/userIdLayout"
+                        android:id="@+id/userId_layout"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:clickable="true">
+                        android:clickable="true"
+                        tools:ignore="TouchTargetSizeCheck">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -168,8 +174,7 @@
                                 android:layout_weight="3"
                                 android:gravity="center|left"
                                 android:text="User Id"
-                                android:textColor="#000000"
-                                android:textSize="20sp"
+                                android:textSize="16dp"
                                 android:textStyle="bold" />
 
                             <TextView
@@ -178,7 +183,57 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="center|right"
-                                android:text="username_one23"
+                                android:textColor="#7E7E7E"
+                                android:textSize="14sp" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                app:srcCompat="@drawable/baseline_arrow_forward_ios_24" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:background="#BCBCBC"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/email_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:clickable="true"
+                        tools:ignore="TouchTargetSizeCheck">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3"
+                                android:gravity="center|left"
+                                android:text="Email"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/email_value"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center|right"
                                 android:textColor="#7E7E7E" />
 
                             <ImageView
@@ -198,10 +253,84 @@
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/password_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:clickable="true"
+                        tools:ignore="TouchTargetSizeCheck">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3"
+                                android:gravity="center|left"
+                                android:text="Password"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                app:srcCompat="@drawable/baseline_arrow_forward_ios_24" />
+                        </LinearLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/textView31"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:paddingStart="10dp"
+                android:text="Profile Information"
+                app:layout_constraintStart_toStartOf="@+id/constraintLayout4"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout4" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout1"
+                style="@style/sublayout_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/report_background"
+                android:paddingStart="15dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="15dp"
+                android:paddingBottom="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.842"
+                app:layout_constraintStart_toStartOf="@+id/textView31"
+                app:layout_constraintTop_toBottomOf="@+id/textView31">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/name_layout"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:clickable="true">
+                        android:clickable="true"
+                        tools:ignore="TouchTargetSizeCheck">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -219,8 +348,7 @@
                                 android:layout_weight="3"
                                 android:gravity="center|left"
                                 android:text="Name"
-                                android:textColor="#000000"
-                                android:textSize="20sp"
+                                android:textSize="16sp"
                                 android:textStyle="bold" />
 
                             <TextView
@@ -229,7 +357,6 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="center|right"
-                                android:text="username_one23"
                                 android:textColor="#7E7E7E" />
 
                             <ImageView
@@ -265,12 +392,11 @@
 
                             <TextView
                                 android:layout_width="0dp"
-                                android:layout_height="30dp"
+                                android:layout_height="wrap_content"
                                 android:layout_weight="3"
                                 android:gravity="center|left"
                                 android:text="Gender"
-                                android:textColor="#000000"
-                                android:textSize="20sp"
+                                android:textSize="16dp"
                                 android:textStyle="bold" />
 
                             <TextView
@@ -279,7 +405,6 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="center|right"
-                                android:text="username_one23"
                                 android:textColor="#7E7E7E" />
 
                             <ImageView
@@ -302,7 +427,8 @@
                         android:id="@+id/birthdate_layout"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:onClick="openDatePicker">
+                        android:onClick="openDatePicker"
+                        tools:ignore="TouchTargetSizeCheck">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -316,12 +442,11 @@
 
                             <TextView
                                 android:layout_width="0dp"
-                                android:layout_height="30dp"
+                                android:layout_height="wrap_content"
                                 android:layout_weight="3"
                                 android:gravity="center|left"
                                 android:text="Birthdate"
-                                android:textColor="#000000"
-                                android:textSize="20sp"
+                                android:textSize="16sp"
                                 android:textStyle="bold" />
 
                             <TextView
@@ -330,7 +455,6 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="center|right"
-                                android:text="11 March 2004"
                                 android:textColor="#7E7E7E" />
 
                             <ImageView
@@ -346,6 +470,115 @@
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/weight_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:clickable="true"
+                        tools:ignore="TouchTargetSizeCheck">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3"
+                                android:gravity="center|left"
+                                android:text="Weight"
+                                android:textSize="16dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/weight_value"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center|right"
+                                android:textColor="#7E7E7E"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/textView23"
+                                android:layout_width="20dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="4dp"
+                                android:text="kg"
+                                android:textColor="#7E7E7E" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                app:srcCompat="@drawable/baseline_arrow_forward_ios_24" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:background="#BCBCBC"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/height_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:clickable="true"
+                        tools:ignore="TouchTargetSizeCheck">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3"
+                                android:gravity="center|left"
+                                android:text="Height"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/height_value"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center|right"
+                                android:textColor="#7E7E7E"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:layout_width="20dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="4dp"
+                                android:text="cm"
+                                android:textColor="#7E7E7E" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                app:srcCompat="@drawable/baseline_arrow_forward_ios_24" />
+                        </LinearLayout>
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 

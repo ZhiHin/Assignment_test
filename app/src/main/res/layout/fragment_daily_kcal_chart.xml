@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".FragmentSubFragmentMonthly">
+    tools:context=".FragmentSubFragmentDailyDuration">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,33 +17,35 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="#FFFFFF"
+            android:background="@android:color/transparent"
             android:src="@drawable/baseline_arrow_back_ios_24" />
 
         <TextView
-            android:id="@+id/month_textview"
+            android:id="@+id/date_textview"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center_horizontal|center_vertical"
-            android:text="July 2023" />
+            android:text="11 July 2023"
+            android:textColor="?android:attr/textColorPrimary" />
 
         <ImageButton
             android:id="@+id/right_button"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="#FFFFFF"
+            android:background="@android:color/transparent"
             android:src="@drawable/baseline_arrow_forward_ios_24" />
 
     </LinearLayout>
 
     <com.github.mikephil.charting.charts.LineChart
-        android:id="@+id/linechart"
+        android:id="@+id/line_chart"
         android:layout_width="match_parent"
         android:layout_height="200dp" />
 
     <LinearLayout
+        android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
@@ -59,18 +61,20 @@
             android:paddingEnd="20dp"
             android:paddingBottom="5dp"
             android:text="Total Duration"
-            android:textColor="#FF0505"
+            android:textColor="#ED0000"
             android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:paddingTop="5dp"
             android:paddingBottom="5dp"
-            android:text="123" />
+            android:text="123"
+            android:textColor="?android:attr/textColorPrimary" />
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -85,7 +89,7 @@
             android:paddingEnd="20dp"
             android:paddingBottom="5dp"
             android:text="Average Duration"
-            android:textColor="#FF0505"
+            android:textColor="#ED0000"
             android:textStyle="bold" />
 
         <TextView
@@ -93,7 +97,8 @@
             android:layout_height="wrap_content"
             android:paddingTop="5dp"
             android:paddingBottom="5dp"
-            android:text="123" />
+            android:text="123"
+            android:textColor="?android:attr/textColorPrimary" />
     </LinearLayout>
 
 
